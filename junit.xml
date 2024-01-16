@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="3.174">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-01-16T16:15:35" time="1.554" tests="1">
+    <testcase classname=" Renders Todo Wrapper" name=" Renders Todo Wrapper" time="0.09">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-01-16T16:15:35" time="1.587" tests="1">
+    <testcase classname=" Renders Edit Form" name=" Renders Edit Form" time="0.266">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-01-16T16:15:35" time="1.701" tests="1">
+    <testcase classname=" Renders Todo Form" name=" Renders Todo Form" time="0.277">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-01-16T16:15:35" time="1.855" tests="3">
+    <testcase classname=" Renders Todo" name=" Renders Todo" time="0.241">
+    </testcase>
+    <testcase classname="Should Render Exact Classname If Is Completed True" name="Should Render Exact Classname If Is Completed True" time="0.009">
+    </testcase>
+    <testcase classname="Should Render Exact Classname If Is Completed False" name="Should Render Exact Classname If Is Completed False" time="0.009">
+    </testcase>
+  </testsuite>
+</testsuites>
