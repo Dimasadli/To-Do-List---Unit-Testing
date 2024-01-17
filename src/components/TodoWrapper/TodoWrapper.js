@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import TodoForm from "../TodoForm/TodoForm";
 import EditTodoForm from "../EditTodoForm/EditTodoForm";
 import Todo from "../Todo/Todo";
 
 const TodoWrapper = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = React.useState([]);
 
   const addTodo = (todo) => {
     setTodos([

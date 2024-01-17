@@ -15,8 +15,9 @@ function EditTodoForm({ editTodo, task }) {
         onChange={(e) => setValue(e.target.value)}
         className="todo-input"
         placeholder="Update task"
+        data-testid="edit-form-input"
       />
-      <button type="submit" className="todo-btn">
+      <button type="submit" className="todo-btn" data-testid="edit-form-submit">
         Add Task
       </button>
     </form>
