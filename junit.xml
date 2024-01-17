@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="7" failures="0" errors="0" time="1.837">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-01-17T07:01:25" time="0.925" tests="1">
-    <testcase classname=" Renders Edit Form" name=" Renders Edit Form" time="0.172">
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="2.3">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-01-17T07:51:17" time="1.183" tests="6">
+    <testcase classname=" Renders Todo Wrapper" name=" Renders Todo Wrapper" time="0.02">
     </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-01-17T07:01:25" time="1.105" tests="6">
-    <testcase classname=" Renders Todo Wrapper" name=" Renders Todo Wrapper" time="0.038">
-    </testcase>
-    <testcase classname=" Renders Todo Mock Add Data" name=" Renders Todo Mock Add Data" time="0.161">
+    <testcase classname=" Renders Todo Mock Add Data" name=" Renders Todo Mock Add Data" time="0.132">
     </testcase>
     <testcase classname=" Renders Todo Mock Complete Data" name=" Renders Todo Mock Complete Data" time="0.018">
     </testcase>
-    <testcase classname=" Renders Todo Mock Delete Data" name=" Renders Todo Mock Delete Data" time="0.011">
+    <testcase classname=" Renders Todo Mock Delete Data" name=" Renders Todo Mock Delete Data" time="0.015">
     </testcase>
-    <testcase classname=" Renders Todo Mock Toggle Edit Data" name=" Renders Todo Mock Toggle Edit Data" time="0.012">
+    <testcase classname=" Renders Todo Mock Toggle Edit Data" name=" Renders Todo Mock Toggle Edit Data" time="0.013">
     </testcase>
-    <testcase classname=" Renders Todo Mock Edit Data" name=" Renders Todo Mock Edit Data" time="0.038">
+    <testcase classname=" Renders Todo Mock Edit Data" name=" Renders Todo Mock Edit Data" time="0.069">
     </testcase>
   </testsuite>
 </testsuites>

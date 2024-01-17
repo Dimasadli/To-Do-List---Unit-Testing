@@ -60,6 +60,12 @@ test("Renders Todo Mock Complete Data", async () => {
       completed: false,
       isEditing: false,
     },
+    {
+      id: Math.floor(Math.random() * 100),
+      task: "Title 2",
+      completed: false,
+      isEditing: false,
+    },
   ];
 
   const setState = jest.fn();
@@ -76,7 +82,10 @@ test("Renders Todo Mock Complete Data", async () => {
 
   await userEvent.click(buttonToggle);
 
-  expect(setState).toHaveBeenCalledWith([{ ...mockData[0], completed: true }]);
+  expect(setState).toHaveBeenCalledWith([
+    { ...mockData[0], completed: true },
+    { ...mockData[1] },
+  ]);
 });
 
 test("Renders Todo Mock Delete Data", async () => {
@@ -87,30 +96,9 @@ test("Renders Todo Mock Delete Data", async () => {
       completed: false,
       isEditing: false,
     },
-  ];
-
-  const setState = jest.fn();
-  jest
-    .spyOn(React, "useState")
-    .mockImplementationOnce(() => [mockData, setState]);
-
-  render(<TodoWrapper />);
-  for (let data of mockData) {
-    expect(screen.getByText(data.task)).toBeInTheDocument();
-  }
-
-  const buttonDelete = screen.getByTestId("delete-icon");
-
-  await userEvent.click(buttonDelete);
-
-  expect(setState).toHaveBeenCalledWith([]);
-});
-
-test("Renders Todo Mock Toggle Edit Data", async () => {
-  const mockData = [
     {
       id: Math.floor(Math.random() * 100),
-      task: "Title 1",
+      task: "Title 2",
       completed: false,
       isEditing: false,
     },
@@ -126,11 +114,54 @@ test("Renders Todo Mock Toggle Edit Data", async () => {
     expect(screen.getByText(data.task)).toBeInTheDocument();
   }
 
-  const buttonEdit = screen.getByTestId("edit-icon");
+  const buttonDelete = screen.getAllByTestId("delete-icon");
 
-  await userEvent.click(buttonEdit);
+  await userEvent.click(buttonDelete[0]);
 
-  expect(setState).toHaveBeenCalledWith([{ ...mockData[0], isEditing: true }]);
+  expect(setState).toHaveBeenCalledWith([
+    {
+      id: expect.any(Number),
+      task: "Title 2",
+      completed: false,
+      isEditing: false,
+    },
+  ]);
+});
+
+test("Renders Todo Mock Toggle Edit Data", async () => {
+  const mockData = [
+    {
+      id: Math.floor(Math.random() * 100),
+      task: "Title 1",
+      completed: false,
+      isEditing: false,
+    },
+    {
+      id: Math.floor(Math.random() * 100),
+      task: "Title 2",
+      completed: false,
+      isEditing: false,
+    },
+  ];
+
+  const setState = jest.fn();
+  jest
+    .spyOn(React, "useState")
+    .mockImplementationOnce(() => [mockData, setState]);
+
+  render(<TodoWrapper />);
+  for (let data of mockData) {
+    expect(screen.getByText(data.task)).toBeInTheDocument();
+  }
+
+  const buttonEdit = screen.getAllByTestId("edit-icon");
+
+  await userEvent.click(buttonEdit[0]);
+
+  expect(setState).toHaveBeenCalledWith([
+    { ...mockData[0], isEditing: true },
+    { ...mockData[1] },
+  ]);
 });
 
 test("Renders Todo Mock Edit Data", async () => {
@@ -141,6 +172,12 @@ test("Renders Todo Mock Edit Data", async () => {
       completed: false,
       isEditing: true,
     },
+    {
+      id: Math.floor(Math.random() * 100),
+      task: "Title 2",
+      completed: false,
+      isEditing: false,
+    },
   ];
 
   const setState = jest.fn();
@@ -150,13 +187,14 @@ test("Renders Todo Mock Edit Data", async () => {
 
   render(<TodoWrapper />);
 
-  const inputEdit = screen.getByTestId("edit-form-input");
-  const buttonSubmit = screen.getByTestId("edit-form-submit");
+  const inputEdit = screen.getAllByTestId("edit-form-input");
+  const buttonSubmit = screen.getAllByTestId("edit-form-submit");
 
-  await userEvent.type(inputEdit, " testing");
-  await userEvent.click(buttonSubmit);
+  await userEvent.type(inputEdit[0], " testing");
+  await userEvent.click(buttonSubmit[0]);
 
   expect(setState).toHaveBeenCalledWith([
     { ...mockData[0], isEditing: false, task: "Title 1 testing" },
+    { ...mockData[1] },
   ]);
 });
